@@ -16,4 +16,9 @@ class CategoryController extends Controller
             return 'عریف نشده';
         }
     }
+
+    public function home()
+    {
+        return 'slam';
+    }
 }
