@@ -21,7 +21,6 @@ class CreateCustomerTable extends Migration
             $table->integer('sexid');
             $table->foreign('sexid')->references('id')->on('sex');
             $table->string('dob');
-            $table->string('address');
             $table->string('postcode');
             $table->string('username');
             $table->string('password');
