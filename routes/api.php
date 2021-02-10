@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/category/{id}','CategoryController@getCategory');
-Route::get('/home','CategoryController@home');
+Route::get('home','CategoryController@home');
