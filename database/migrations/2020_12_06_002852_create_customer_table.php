@@ -17,8 +17,21 @@ class CreateCustomerTable extends Migration
             $table->id();
             $table->string('customerName',100);
             $table->string('phoneNo',100);
-            $table->string('phoneNo',100);
-            $table->timestamps();
+            $table->string('address',100);
+            $table->integer('sexid');
+            $table->foreign('sexid')->references('id')->on('sex');
+            $table->string('dob');
+            $table->string('address');
+            $table->string('postcode');
+            $table->string('username');
+            $table->string('password');
+            $table->integer('cartid');
+            $table->foreign('cartid')->references('id')->on('cart');
+            $table->integer('orderid');
+            $table->foreign('orderid')->references('id')->on('order');
+
+
+
         });
     }
 
