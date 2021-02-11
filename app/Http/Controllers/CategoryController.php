@@ -20,11 +20,13 @@ class CategoryController extends Controller
             dd($product);
         }
     }
-        public function category()
+    public function category()
     {
+        while (1) {
 
-        $product = DB::table('product');
-        return $product;
+            $product = DB::table('product');
+            return $product;
+        }
     }
 
     public function home()
