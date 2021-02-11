@@ -31,3 +31,17 @@ Route::get('/category/{id}',
     });
 
 Route::get('/home','CategoryController@home');
+
+Route::get('/category/lipstick','CategoryController@lipstick');
+
+Route::get('/category/mascara','CategoryController@mascara');
+
+Route::get('/category/cream','CategoryController@cream');
+
+Route::get('/category/nailpolish','CategoryController@nailpolish');
+
+Route::get('/category/lotion','CategoryController@lotion');
+
+Route::get('/category/sunscream','CategoryController@sunscream');
+
+Route::get('/category/facewash','CategoryController@facewash');

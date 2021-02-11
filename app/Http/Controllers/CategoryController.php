@@ -24,7 +24,7 @@ class CategoryController extends Controller
     {
         while (1) {
 
-            $product = DB::table('product');
+            $product = DB::table('product')->get();
             return $product;
         }
     }
@@ -32,6 +32,48 @@ class CategoryController extends Controller
     public function home()
     {
         return 'slam';
+    }
+
+    public function lipstick()
+    {
+        $product = DB::table('product')->where('kindid','=','1')->get();
+        return $product;
+
+    }
+    public function mascara()
+    {
+        $product = DB::table('product')->where('kindid','=','2')->get();
+        return $product;
+    }
+
+    public function cream()
+    {
+        $product = DB::table('product')->where('kindid','=','3')->get();
+        return $product;
+    }
+
+    public function nailpolish()
+    {
+        $product = DB::table('product')->where('kindid','=','4')->get();
+        return $product;
+    }
+
+    public function lotion()
+    {
+        $product = DB::table('product')->where('kindid','=','5')->get();
+        return $product;
+    }
+
+    public function sunscream()
+    {
+        $product = DB::table('product')->where('kindid','=','2')->get();
+        return $product;
+    }
+
+    public function facewash()
+    {
+        $product = DB::table('product')->where('kindid','=','7')->get();
+        return $product;
     }
 
 }
