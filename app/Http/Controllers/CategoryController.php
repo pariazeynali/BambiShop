@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
     public function getCategory($id)
     {
-        if ($id == 1){
-            return response()->json('this is one');
+        if ($id == id){
+            $product= DB::table('product')->where('id','=',id)->get();
+            dd($product);
         }elseif ($id ==2) {
-            return response()->json('this is 2');
-        }else{
-            return response()->json('this is 3');
+            $product= DB::table('product')->where('id','=','2')->get();
+            dd($product);
+        }elseif($id==3){
+            $product= DB::table('product')->where('id','=','3')->get();
+            dd($product);
         }
     }
 
