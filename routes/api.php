@@ -19,11 +19,15 @@ use Illuminate\Support\Facades\DB;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/category','CtegoryController@category');
+
+
 Route::get('/category/{id}',
     function ($id) {
 
         $product = DB::table('product')->find($id);
-        dd($product);
+        return $product;
 
     });
-Route::get('home','CategoryController@home');
+
+Route::get('/home','CategoryController@home');
