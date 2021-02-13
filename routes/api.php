@@ -45,3 +45,9 @@ Route::get('/category/lotion','CategoryController@lotion');
 Route::get('/category/sunscream','CategoryController@sunscream');
 
 Route::get('/category/facewash','CategoryController@facewash');
+
+Route::get('/category/oilyskin','CategoryController@oily');
+
+Route::get('/category/dryskin','CategoryController@dry');
+
+Route::get('/category/normalskin','CategoryController@normal');

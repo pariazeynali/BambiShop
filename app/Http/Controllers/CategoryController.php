@@ -76,4 +76,22 @@ class CategoryController extends Controller
         return $product;
     }
 
+    public function oily()
+    {
+        $product = DB::table('product')->where('skintypeid','=','1')->get();
+        return $product;
+    }
+
+    public function dry()
+    {
+        $product = DB::table('product')->where('skintypeid','=','2')->get();
+        return $product;
+    }
+
+    public function normal()
+    {
+        $product = DB::table('product')->where('skintypeid','=','3')->get();
+        return $product;
+    }
+
 }

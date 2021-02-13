@@ -19,13 +19,13 @@ class CreateProductTable extends Migration
             $table->string('company');
             $table->integer('price');
             $table->integer('count');
-            $table->integer('kindid');
+            $table->integer('kindid')->nullable(false)->change();
             $table->foreign('kindid')->references('id')->on('kind');
-            $table->integer('typeid');
+            $table->integer('typeid')->nullable(false)->change();
             $table->foreign('typeid')->references('id')->on('type');
-            $table->integer('skintypeid');
+            $table->integer('skintypeid')->nullable(false)->change();
             $table->foreign('skintypeid')->references('id')->on('skintype');
-            $table->binary('pic');
+            $table->binary('pic')->nullable(false)->change();
         });
     }
 
