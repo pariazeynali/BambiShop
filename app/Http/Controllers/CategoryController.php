@@ -36,19 +36,19 @@ class CategoryController extends Controller
 
     public function lipstick()
     {
-        $product = DB::table('product')->where('kindid','=','1')->get();
+        $product = DB::table('product')->where('kindid','=',1)->get();
         return $product;
 
     }
     public function mascara()
     {
-        $product = DB::table('product')->where('kindid','=','2')->get();
+        $product = DB::table('product')->where('kindid','=',2)->get();
         return $product;
     }
 
     public function cream()
     {
-        $product = DB::table('product')->where('kindid','=','3')->get();
+        $product = DB::table('product')->where('kindid','=',3)->get();
         return $product;
     }
 
