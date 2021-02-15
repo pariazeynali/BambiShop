@@ -21,11 +21,11 @@ class CreateProductTable extends Migration
             $table->integer('count');
             $table->unsignedBigInteger('kind_id');
             $table->foreign('kind_id')->references('id')->on('kind');
-            $table->integer('typeid')->nullable(false)->change();
-            $table->foreign('typeid')->references('id')->on('type');
-            $table->integer('skintypeid')->nullable(false)->change();
+            $table->integer('type_id')->nullable();
+            $table->foreign('type_id')->references('id')->on('type');
+            $table->integer('skintypeid')->nullable();
             $table->foreign('skintypeid')->references('id')->on('skintype');
-            $table->binary('pic')->nullable()->change();
+            $table->binary('pic')->nullable();
         });
     }
 
