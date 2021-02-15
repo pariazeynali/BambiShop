@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -33,4 +34,6 @@ Route::get('/product/{id}',
 Route::get('/home','CategoryController@home');
 
 Route::get('/category/{cat}',[CategoryController::class,'lipstick']);
+
+Route::post('/product/create',[ProductController::class,'create']);
 

@@ -37,8 +37,8 @@ class CategoryController extends Controller
 
     public function lipstick($cat)
     {
-        $product = DB::table('product')->where('kindid', '=', $cat)->get();
+        $kind_id = DB::table('kind')->where('kind',$cat)->first();
+        $product = DB::table('product')->where('kindid', '=', $kind_id)->get();
         return response()->json($product);
-
     }
 }
