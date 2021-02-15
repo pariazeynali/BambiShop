@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/category','CtegoryController@category');
 
 
-Route::get('/category/{id}',
+Route::get('/product/{id}',
     function ($id) {
 
         $product = DB::table('product')->find($id);
@@ -32,22 +32,5 @@ Route::get('/category/{id}',
 
 Route::get('/home','CategoryController@home');
 
-Route::get('/category/lipstick','CategoryController@lipstick');
+Route::get('/category/{cat}','CategoryController@lipstick');
 
-Route::get('/category/mascara','CategoryController@mascara');
-
-Route::get('/category/cream','CategoryController@cream');
-
-Route::get('/category/nailpolish','CategoryController@nailpolish');
-
-Route::get('/category/lotion','CategoryController@lotion');
-
-Route::get('/category/sunscream','CategoryController@sunscream');
-
-Route::get('/category/facewash','CategoryController@facewash');
-
-Route::get('/category/oilyskin','CategoryController@oily');
-
-Route::get('/category/dryskin','CategoryController@dry');
-
-Route::get('/category/normalskin','CategoryController@normal');

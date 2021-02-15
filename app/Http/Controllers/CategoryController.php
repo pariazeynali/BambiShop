@@ -20,6 +20,7 @@ class CategoryController extends Controller
             dd($product);
         }
     }
+
     public function category()
     {
         while (1) {
@@ -34,64 +35,10 @@ class CategoryController extends Controller
         return 'slam';
     }
 
-    public function lipstick()
+    public function lipstick($cat)
     {
-        $product = DB::table('product')->where('kindid','=',1)->get();
-        return $product;
+        $product = DB::table('product')->where('kindid', '=', $cat)->get();
+        return response()->json($product);
 
     }
-    public function mascara()
-    {
-        $product = DB::table('product')->where('kindid','=',2)->get();
-        return $product;
-    }
-
-    public function cream()
-    {
-        $product = DB::table('product')->where('kindid','=',3)->get();
-        return $product;
-    }
-
-    public function nailpolish()
-    {
-        $product = DB::table('product')->where('kindid','=','4')->get();
-        return $product;
-    }
-
-    public function lotion()
-    {
-        $product = DB::table('product')->where('kindid','=','5')->get();
-        return $product;
-    }
-
-    public function sunscream()
-    {
-        $product = DB::table('product')->where('kindid','=','2')->get();
-        return $product;
-    }
-
-    public function facewash()
-    {
-        $product = DB::table('product')->where('kindid','=','7')->get();
-        return $product;
-    }
-
-    public function oily()
-    {
-        $product = DB::table('product')->where('skintypeid','=','1')->get();
-        return $product;
-    }
-
-    public function dry()
-    {
-        $product = DB::table('product')->where('skintypeid','=','2')->get();
-        return $product;
-    }
-
-    public function normal()
-    {
-        $product = DB::table('product')->where('skintypeid','=','3')->get();
-        return $product;
-    }
-
 }
