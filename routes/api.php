@@ -32,5 +32,5 @@ Route::get('/product/{id}',
 
 Route::get('/home','CategoryController@home');
 
-Route::get('/category/{cat}','CategoryController@lipstick');
+Route::get('/category/{cat}',[CategoryController::class,'lipstick']);
 
