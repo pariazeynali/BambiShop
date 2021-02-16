@@ -26,16 +26,12 @@ class CategoryController extends Controller
         while (1) {
 
             $product = DB::table('product')->get();
-            return $product;
+            return response()->json($product);
         }
     }
 
-    public function home()
-    {
-        return 'slam';
-    }
 
-    public function lipstick($cat)
+    public function product_kind($cat)
     {
         $kind_id = DB::table('kind')->where('kind',$cat)->first();
         $product = DB::table('product')->where('kindid', '=', $kind_id)->get();

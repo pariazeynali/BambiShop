@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -31,9 +32,11 @@ Route::get('/product/{id}',
 
     });
 
-Route::get('/home','CategoryController@home');
 
-Route::get('/category/{cat}',[CategoryController::class,'lipstick']);
+Route::get('/category/{cat}',[CategoryController::class,'product_kind']);
 
 Route::post('/product/create',[ProductController::class,'create']);
 
+Route::get('/login',[AuthController::class,'login']);
+
+Route::post('/login',[AuthController::class,'loginer']);

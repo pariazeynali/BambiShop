@@ -16,8 +16,8 @@ class ProductController extends Controller
             'count'       => 'required|numeric',
         ]);
 
-        $product =Product::create($request->except('_token'));
-        dd($product);
+        $product =Product::create($request->all());
+        return response()->json($product);
 
     }
 }
