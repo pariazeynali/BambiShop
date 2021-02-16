@@ -27,7 +27,7 @@ Route::get('/category',[CategoryController::class,'category']);
 Route::get('/product/{id}',
     function ($id) {
 
-        $product = DB::table('product')->where('id','=',$id);
+        $product = DB::table('product')->where('id','=',$id)->first();
         return response()->json($product);
 
     });
