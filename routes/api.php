@@ -28,7 +28,7 @@ Route::get('/product/{id}',
     function ($id) {
 
         $product = DB::table('product')->find($id);
-        return $product;
+        return response()->json($product);
 
     });
 
