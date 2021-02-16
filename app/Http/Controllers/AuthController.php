@@ -15,12 +15,6 @@ class AuthController extends Controller
             return redirect()->route('login');
         }
 
-
-        if($user->active === 0) {
-            Session::flash('user.login', 'User disabled');
-            return redirect()->route('login');
-        }
-
         $credentials = $request->only('username', 'password');
 
         if(Auth::attempt($credentials)) {
@@ -37,5 +31,9 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function logout(Request $request){
+
     }
 }

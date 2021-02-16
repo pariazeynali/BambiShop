@@ -35,8 +35,14 @@ Route::get('/product/{id}',
 
 Route::get('/category/{cat}',[CategoryController::class,'product_kind']);
 
+Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
+
 Route::post('/product/create',[ProductController::class,'create']);
+
+Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 
 Route::get('/login',[AuthController::class,'login']);
 
-Route::post('/login',[AuthController::class,'loginer']);
+Route::get('logout',[AuthController::class,'logout']);
+
+

@@ -24,4 +24,10 @@ class CategoryController extends Controller
         $product = DB::table('product')->where('kind_id', '=', $kind_id)->get();
         return response()->json($product);
     }
+
+    public function product_skintype($skin){
+        $skintypeid=DB::table('skintype')->where('skintype',$skin)->first();
+        $product = DB::table('product')->where('kind_id', '=', $skintypeid)->get();
+        return response()->json($product);
+    }
 }
