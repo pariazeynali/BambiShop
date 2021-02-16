@@ -34,7 +34,7 @@ class CategoryController extends Controller
     public function product_kind($cat)
     {
         $kind_id = DB::table('kind')->where('kind',$cat)->first();
-        $product = DB::table('product')->where('kindid', '=', $kind_id)->get();
+        $product = DB::table('product')->where('kind_id', '=', $kind_id)->get();
         return response()->json($product);
     }
 }
