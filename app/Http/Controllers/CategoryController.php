@@ -20,14 +20,14 @@ class CategoryController extends Controller
 
     public function product_kind($cat)
     {
-        $kind_id = DB::table('kind')->where('kind',$cat)->first();
+        $kind_id = DB::table('kind')->where('kind',$cat)->value('id');
         $product = DB::table('product')->where('kind_id', '=', $kind_id)->get();
         return response()->json($product);
     }
 
     public function product_skintype($skin){
-        $skintypeid=DB::table('skintype')->where('skintype',$skin)->first();
-        $product = DB::table('product')->where('kind_id', '=', $skintypeid)->get();
+        $skintypeid =DB::table('skintype')->where('skintype',$skin)->value('id');
+        $product = DB::table('product')->where('skintypeid', '=', $skintypeid)->get();
         return response()->json($product);
     }
 }
