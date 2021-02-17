@@ -25,8 +25,7 @@ class CreateCustomersTable extends Migration
             $table->string('city');
             $table->string('postcode',10)->unique();
             $table->longText('address');
-            $table->integer('order_id');
-            $table->foreign('order_id')->references('id')->on('order');
+
 
 
 
