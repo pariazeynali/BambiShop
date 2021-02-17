@@ -17,8 +17,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('username')->unique();
             $table->string('password');
-            $table->integer('cart_id');
-            $table->foreign('cart_id')->references('id')->on('carts');
         });
     }
 
