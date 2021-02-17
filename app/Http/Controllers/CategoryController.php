@@ -10,11 +10,8 @@ class CategoryController extends Controller
 
     public function category()
     {
-        while (1) {
-
-            $product = DB::table('products')->get();
-            return response()->json($product);
-        }
+        $product = DB::table('products')->get();
+        return response()->json($product);
     }
 
 
