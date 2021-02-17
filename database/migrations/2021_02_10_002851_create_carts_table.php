@@ -13,9 +13,9 @@ class CreateCartTable extends Migration
      */
     public function up()
     {
-        Schema::create('cart', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            //$table->;
+            //$table->binary('cart');
         });
     }
 
