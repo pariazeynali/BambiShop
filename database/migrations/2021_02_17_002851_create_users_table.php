@@ -17,9 +17,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('username')->unique();
             $table->string('password');
-
-            $table->integer('customer_id')->unique()->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 
