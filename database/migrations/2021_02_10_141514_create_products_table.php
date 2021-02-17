@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('company');
             $table->integer('price');
             $table->integer('count');
+            $table->string('productinfo');
             $table->unsignedBigInteger('kind_id');
             $table->foreign('kind_id')->references('id')->on('kind');
             $table->integer('type_id')->nullable();
