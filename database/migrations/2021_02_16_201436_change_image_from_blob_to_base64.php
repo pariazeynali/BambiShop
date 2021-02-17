@@ -13,11 +13,11 @@ class ChangeImageFromBlobToBase64 extends Migration
      */
     public function up()
     {
-        Schema::table('product', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('pic');
         });
 
-        Schema::table('product', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             $table->text('pic')->nullable();
         });
     }
@@ -29,11 +29,11 @@ class ChangeImageFromBlobToBase64 extends Migration
      */
     public function down()
     {
-        Schema::table('product', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('pic');
         });
 
-        Schema::table('product', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             $table->binary('pic')->nullable();
         });
     }
