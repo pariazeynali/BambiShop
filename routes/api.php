@@ -23,6 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/category',[CategoryController::class,'category']);
 
+Route::post('/product/create',[ProductController::class,'create']);
 
 Route::get('/product/{id}',
     function ($id) {
@@ -37,11 +38,9 @@ Route::get('/category/{cat}',[CategoryController::class,'product_kind']);
 
 Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 
-Route::post('/product/create',[ProductController::class,'create']);
-
 Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 
-Route::get('/login',[AuthController::class,'login']);
+Route::post('/login',[AuthController::class,'login']);
 
 Route::get('logout',[AuthController::class,'logout']);
 
