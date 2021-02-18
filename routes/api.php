@@ -36,10 +36,7 @@ Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 Route::post('/sign-in',[AuthController::class,'signIn']);
 Route::post('/sign-up',[AuthController::class,'signUp']);
 
-Route::post('/buy',function (Request $request){
-    return $request->user();
-    // buying ....
-})->middleware('auth:api');
+Route::post('/buy',[ShoppingController::class,'add_to_cart'])->middleware('auth:api');
 
 Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
 
