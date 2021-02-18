@@ -34,7 +34,7 @@ class AuthController extends Controller
     public function signIn(Request $request)
     {
         $validated = $request->validate([
-            'username' => 'required|unique:users|max:255',
+            'username' => 'required|max:255',
             'password' => 'required'
         ]);
 
@@ -44,6 +44,18 @@ class AuthController extends Controller
             $token = Str::random(60);
             $user->api_login = hash('sha256', $token);
             $user->update();
+            return response(['flag'=>true],200);
+
+        }else{
+            return response(['flag'=>false,'message' => 'نام کاربری یا رمز عبور شما درست نیست'],200);
         }
     }
+    public function logout(Request $request)
+    {
+        $token = null;
+        $user = $request->user();
+        $user->api_login = $token;
+
+    }
+
 }

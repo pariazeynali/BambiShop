@@ -41,6 +41,6 @@ Route::post('/buy',function (Request $request){
     // buying ....
 })->middleware('auth:api');
 
-Route::get('logout',[AuthController::class,'logout']);
+Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
 
 
