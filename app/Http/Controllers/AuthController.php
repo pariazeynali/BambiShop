@@ -42,7 +42,7 @@ class AuthController extends Controller
 
         if ($user){
             $token = Str::random(60);
-            $user->api_login = hash('sha256', $token);
+            $user->api_token = hash('sha256', $token);
             $user->update();
             return response(['flag'=>true],200);
 

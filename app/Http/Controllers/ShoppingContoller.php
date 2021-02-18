@@ -11,7 +11,8 @@ class ShoppingContoller extends Controller
 {
     public function addToCart(Request $request)
     {
-        $user = $request->user();
+//        $user = $request->user();
+//        $cart = DB::table('users')->join('carts','id',)
 
     }
 
