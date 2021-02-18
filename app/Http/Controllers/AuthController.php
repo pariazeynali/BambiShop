@@ -44,7 +44,8 @@ class AuthController extends Controller
             $token = Str::random(60);
             $user->api_token = hash('sha256', $token);
             $user->update();
-            return response(['flag'=>true],200);
+
+            return response(['flag'=>true,'token'=>$token],200);
 
         }else{
             return response(['flag'=>false,'message' => 'نام کاربری یا رمز عبور شما درست نیست'],200);
