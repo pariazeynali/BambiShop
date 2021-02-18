@@ -37,7 +37,7 @@ Route::post('/sign-in',[AuthController::class,' signUp']);
 Route::post('/sign-up',[AuthController::class,' signUp']);
 
 Route::post('/buy',function (Request $request){
-//    return $request->user();
+    return $request->user();
     // buying ....
 })->middleware('auth:api');
 
