@@ -14,4 +14,8 @@ use function GuzzleHttp\Promise\all;
 class AuthController extends Controller
 {
 
+    public function signUp(Request $request)
+    {
+
+    }
 }
