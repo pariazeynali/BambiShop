@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\DB;
 class CategoryController extends Controller
 {
 
+    public function product($id)
+    {
+        $product = DB::table('products')->where('id','=',$id)->first();
+        return response()->json($product);
+    }
+
     public function category()
     {
         $product = DB::table('products')->get();

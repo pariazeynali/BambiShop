@@ -25,14 +25,7 @@ Route::get('/category',[CategoryController::class,'category']);
 
 Route::post('/product/create',[ProductController::class,'create']);
 
-Route::get('/product/{id}',
-    function ($id) {
-
-        $product = DB::table('products')->where('id','=',$id)->first();
-        return response()->json($product);
-
-    });
-
+Route::get('/product/{id}',[CategoryController::class,'product']);
 
 Route::get('/category/{cat}',[CategoryController::class,'product_kind']);
 
