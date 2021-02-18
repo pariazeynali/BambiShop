@@ -10,7 +10,7 @@ class CategoryController extends Controller
 
     public function product($id)
     {
-        $product = DB::table('products')->where('id','=',$id)->first();
+        $product = DB::table('products')->where('id','=',$id)->get();
         return response()->json($product);
     }
 
