@@ -13,7 +13,7 @@ class ShoppingContoller extends Controller
     public function addToCart(Request $request)
     {
         $validated = $request->validate([
-            'product_id' => 'number|exists:products,id',
+            'product_id' => 'integer|exists:products,id',
         ]);
 
         Cart::create([
