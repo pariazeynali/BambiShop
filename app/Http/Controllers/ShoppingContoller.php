@@ -10,15 +10,15 @@ use Illuminate\Support\Facades\DB;
 
 class ShoppingContoller extends Controller
 {
-    public function addToCart(Request $request,Product $id)
+    public function addToCart(Request $request,Product $product)
     {
         $validated = $request->validate([
             'id' => 'number|exists:products,id',
         ]);
 
-        if ($id){
+        if ($product){
             Cart::create([
-                'product_id' => $id,
+                'product_id' => $product->id,
                 'user_id' => $request->user()->id,
             ]);
             return response()->json(['flag'=>true,'message'=>'با موفقیت در سبد خرید اضافه شد']);

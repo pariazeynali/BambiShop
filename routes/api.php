@@ -43,6 +43,6 @@ Route::post('/buy',function (Request $request){
 })->middleware('auth:api');
 
 Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
-Route::post('/add-cart/{id}',[ShoppingContoller::class,'addToCart'])->middleware('auth:api');
+Route::post('/add-cart/{product}',[ShoppingContoller::class,'addToCart'])->middleware('auth:api');
 
 
