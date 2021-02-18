@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ShoppingContoller extends Controller
 {
-    public function addToCart($id)
+    public function addToCart(Request $request)
     {
-        $product = DB::table('products')->where('id',$id)->get();
-        $cart=Cart::create($product->all());
-        return response()->json($cart);
+        $user = $request->user();
+
+    }
+
+    public function add($id)
+    {
 
     }
 }
