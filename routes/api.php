@@ -28,7 +28,7 @@ Route::post('/product/create',[ProductController::class,'create']);
 Route::get('/product/{id}',
     function ($id) {
 
-        $product = DB::table('product')->where('id','=',$id)->first();
+        $product = DB::table('products')->where('id','=',$id)->first();
         return response()->json($product);
 
     });
