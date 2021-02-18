@@ -15,7 +15,7 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return response()->json(['message' => 'شما هنوز وارد نشدید']);
+            return 'شما هنوز وارد نشدید';
         }
     }
 }
