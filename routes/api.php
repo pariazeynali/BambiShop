@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShoppingContoller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -42,5 +43,6 @@ Route::post('/buy',function (Request $request){
 })->middleware('auth:api');
 
 Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
+Route::post('/add-cart/{id}',[ShoppingContoller::class,'addToCart'])->middleware('auth:api');
 
 
