@@ -33,8 +33,8 @@ Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 
 Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 
-Route::post('/sign-in',[AuthController::class,' signUp']);
-Route::post('/sign-up',[AuthController::class,' signUp']);
+Route::post('/sign-in',[AuthController::class,'signIn']);
+Route::post('/sign-up',[AuthController::class,'signUp']);
 
 Route::post('/buy',function (Request $request){
     return $request->user();
