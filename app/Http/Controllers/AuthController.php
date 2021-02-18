@@ -19,7 +19,7 @@ class AuthController extends Controller
     {
         $this->login_validate($request);
 
-        $user=DB::table('customer')->where('username','=' , $request->username)->get()->first();
+        $user=DB::table('users')->where('username','=' , $request->username)->get()->first();
         if(!$user) {
             Session::flash('user.login', 'user not found');
             return redirect()->route('login');
