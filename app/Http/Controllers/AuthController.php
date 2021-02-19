@@ -45,7 +45,7 @@ class AuthController extends Controller
             $user->api_token = hash('sha256', $token);
             $user->update();
 
-            return response(['flag'=>true,'token'=>$token],200);
+            return response(['flag'=>true,'token'=>$token, 'username'=>$request->username],200);
 
         }else{
             return response(['flag'=>false,'message' => 'نام کاربری یا رمز عبور شما درست نیست'],200);
