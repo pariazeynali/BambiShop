@@ -17,6 +17,7 @@ class Customer extends Model
         'province',
         'city',
         'postcode',
-        'address'
+        'address',
+        'customer_token'
     ];
 }

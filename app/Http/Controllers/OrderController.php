@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class OrderController extends Controller
 {
@@ -20,6 +21,8 @@ class OrderController extends Controller
             'address'=>'required'
         ]);
 
+        $token = Str::random(60);
+
         $user = Customer::create(
             [
                 'fname' => $request->fname,
@@ -30,8 +33,11 @@ class OrderController extends Controller
                 'city' => $request->city,
                 'postcode' => $request->postcode,
                 'address' => $request->address,
+                'customer_token' => hash('sha256', $token),
             ]
         );
+
+        return response()->json(['token' => $token]);
 
     }
 }
