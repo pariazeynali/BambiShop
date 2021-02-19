@@ -17,8 +17,8 @@ class OrderController extends Controller
         $validated = $request->validate([
             'fname' => 'required',
             'lname' => 'required',
-            'national_id' =>'required|numeric|max:10|min:10',
-            'phone_number'=>'required|numeric|max:11|min:11',
+            'national_id' =>'required|numeric|max:11|min:9',
+            'phone_number'=>'required|numeric|max:12|min:10',
             'province'=>'required',
             'city'=>'required',
             'postcode'=>'required|numeric',
