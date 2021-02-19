@@ -18,6 +18,5 @@ class Customer extends Model
         'city',
         'postcode',
         'address',
-        'customer_token'
     ];
 }

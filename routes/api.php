@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingContoller;
 use Illuminate\Http\Request;
@@ -44,8 +45,10 @@ Route::post('/buy',function (Request $request){
 
 Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
 Route::post('/add-cart',[ShoppingContoller::class,'addToCart'])->middleware('auth:api');
-Route::get('show-cart/{id}',[ShoppingContoller::class,'showCart']);
-Route::post('/add-information',[OrderContoller::class,'addInfo'])->middleware('auth:api');
+Route::get('show-cart/{id}',[ShoppingContoller::class,'showCart'])->middleware('auth:api');
+Route::post('/add-information',[OrderController::class,'addAddress'])->middleware('auth:api');
+Route::get('/show_order/{id}',[OrderController::class,'showOrder'])->middleware('auth:api');
+Route::post('/final-pay',[OrderController::class,'MoveCartToOrder'])->middleware('auth:api');
 
 
 
