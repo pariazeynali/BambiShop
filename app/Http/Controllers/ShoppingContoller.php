@@ -24,11 +24,12 @@ class ShoppingContoller extends Controller
 
     }
 
-    protected function add($id)
+    protected function showCart($id)
     {
-        $product = DB::table('products')->where('id',$id)->get();
-        $cart=Cart::create($product->all());
-        return $cart;
+       $cart=DB::table('products')->join('carts','products.id','=','carts.product_id')->
+       select('products.productname','products.company','products.price','products.pic')->
+       where('carts.id','=',$id)->get();
+        return response()->json($cart);
 
     }
 }
