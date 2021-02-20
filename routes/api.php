@@ -45,7 +45,7 @@ Route::post('/add-cart',[ShoppingContoller::class,'addToCart']);
 
 Route::post('/show-cart',[ShoppingContoller::class,'showCart']);
 
-Route::post('/add-information',[OrderController::class,'addAddress'])->middleware('auth:api');
+Route::post('/add-information',[OrderController::class,'addAddress']);
 
 Route::get('/show_order/{id}',[OrderController::class,'showOrder'])->middleware('auth:api');
 

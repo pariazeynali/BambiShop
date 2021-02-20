@@ -17,29 +17,28 @@ class OrderController extends Controller
         $validated = $request->validate([
             'fname' => 'required',
             'lname' => 'required',
-            'national_id' =>'required|numeric|min:9',
             'phone_number'=>'required|numeric|min:10',
             'province'=>'required',
             'city'=>'required',
             'postcode'=>'required|numeric',
             'address'=>'required'
         ]);
+        $user = User::where('username',$request->username);
 
         $customer = Customer::create(
             [
                 'fname' => $request->fname,
                 'lname' => $request->lname,
-                'national_id' => $request->national_id,
                 'phone_number' => $request->phone_number,
                 'province' => $request->province,
                 'city' => $request->city,
                 'postcode' => $request->postcode,
                 'address' => $request->address,
-                'user_id' => $request->user()->id
+                'user_id' => $user->first()->id,
             ]
         );
 
-        $request->user()->update(['customer_id'=>$customer->id]);
+        $user->update(['customer_id'=>$customer->id]);
 
        return response()->json(['flag' =>true,'message'=>'خرید شما با موفقیت ثبت شد']);
 
