@@ -28,7 +28,7 @@ class AuthController extends Controller
             ]
         );
 
-        return response(['flag'=>true, 'username'=>$request->username],200);
+        return response(['flag'=>true, 'username'=>$request->username],201);
     }
 
     public function signIn(Request $request)
