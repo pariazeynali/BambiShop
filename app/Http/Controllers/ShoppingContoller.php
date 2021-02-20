@@ -15,7 +15,6 @@ class ShoppingContoller extends Controller
         $user = User::where('username',$request->username);
         $validated = $request->validate([
             'product_id' => 'integer|exists:products,id',
-            'username'=>'required|unique:users|max:255'
         ]);
 
         Cart::create([

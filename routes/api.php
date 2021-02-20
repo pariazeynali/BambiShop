@@ -41,7 +41,7 @@ Route::post('/sign-up',[AuthController::class,'signUp']);
 
 Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
 
-Route::post('/add-cart',[ShoppingContoller::class,'addToCart'])->middleware('auth:api');
+Route::post('/add-cart',[ShoppingContoller::class,'addToCart']);
 
 Route::post('/show-cart',[ShoppingContoller::class,'showCart'])->middleware('auth:api');
 
