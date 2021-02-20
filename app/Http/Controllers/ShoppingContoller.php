@@ -12,6 +12,7 @@ class ShoppingContoller extends Controller
 {
     public function addToCart(Request $request)
     {
+        $user = User::where('username',$request->username);
         $validated = $request->validate([
             'product_id' => 'integer|exists:products,id',
         ]);
