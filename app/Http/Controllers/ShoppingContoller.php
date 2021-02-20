@@ -27,7 +27,7 @@ class ShoppingContoller extends Controller
 
     protected function showCart(Request $request)
     {
-       $user = User::where('username',$request->username);
+       $user = User::where('username',$request->username)->first();
        $cart=DB::table('products')->join('carts','products.id','=','carts.product_id')->
        select('products.productname','products.company','products.price','products.pic')->
        where('carts.user_id','=',$user->id)->get();
