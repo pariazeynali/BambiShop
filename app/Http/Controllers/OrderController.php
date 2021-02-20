@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -56,9 +57,14 @@ class OrderController extends Controller
     }
 
     public function MoveCartToOrder(Request $request){
-        $carts = Cart::where('user_id',$request->user()->id);
+        $carts = Cart::where('user_id',User::where('username',$request->username)->first()->id);
 
         foreach ($carts->get() as $cart){
+
+            $product = Product::find($cart->product_id);
+            $product->count = $product->count -1 ;
+            $product->save();
+
             Order::create([
                 'product_id' => $cart->product_id,
                 'user_id' => $request->user()->id

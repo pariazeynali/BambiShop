@@ -49,7 +49,7 @@ Route::post('/add-information',[OrderController::class,'addAddress']);
 
 Route::get('/show_order/{id}',[OrderController::class,'showOrder'])->middleware('auth:api');
 
-Route::post('/final-pay',[OrderController::class,'MoveCartToOrder'])->middleware('auth:api');
+Route::post('/final-pay',[OrderController::class,'MoveCartToOrder']);
 
 
 
