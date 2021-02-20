@@ -28,7 +28,7 @@ class AuthController extends Controller
             ]
         );
 
-        return response()->json(['token' => $token]);
+        return response(['flag'=>true,'token'=>$token, 'username'=>$request->username],200);
     }
 
     public function signIn(Request $request)
