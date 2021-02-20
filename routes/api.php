@@ -36,18 +36,19 @@ Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 Route::get('/skin/{skin}',[CategoryController::class,'product_skintype']);
 
 Route::post('/sign-in',[AuthController::class,'signIn']);
+
 Route::post('/sign-up',[AuthController::class,'signUp']);
 
-Route::post('/buy',function (Request $request){
-    return $request->user();
-    // buying ....
-})->middleware('auth:api');
-
 Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
+
 Route::post('/add-cart',[ShoppingContoller::class,'addToCart'])->middleware('auth:api');
+
 Route::get('show-cart/{id}',[ShoppingContoller::class,'showCart'])->middleware('auth:api');
+
 Route::post('/add-information',[OrderController::class,'addAddress'])->middleware('auth:api');
+
 Route::get('/show_order/{id}',[OrderController::class,'showOrder'])->middleware('auth:api');
+
 Route::post('/final-pay',[OrderController::class,'MoveCartToOrder'])->middleware('auth:api');
 
 

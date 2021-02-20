@@ -28,7 +28,7 @@ class ShoppingContoller extends Controller
     {
        $cart=DB::table('products')->join('carts','products.id','=','carts.product_id')->
        select('products.productname','products.company','products.price','products.pic')->
-       where('carts.id','=',$id)->get();
+       where('carts.user_id','=',$id)->get();
         return response()->json($cart);
 
     }

@@ -50,7 +50,7 @@ class OrderController extends Controller
         $order=DB::table('orders')
             ->join('products','product.id','=','orders.product_id')
             ->select('products.productname','products.company','products.price','products.pic')
-            ->where('order.id','=',$id)
+            ->where('order.user_id','=',$id)
             ->get();
         return response()->json($order);
 
