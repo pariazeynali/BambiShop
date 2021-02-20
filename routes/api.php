@@ -43,7 +43,7 @@ Route::post('logout',[AuthController::class,'logout'])->middleware('auth:api');
 
 Route::post('/add-cart',[ShoppingContoller::class,'addToCart']);
 
-Route::post('/show-cart',[ShoppingContoller::class,'showCart'])->middleware('auth:api');
+Route::post('/show-cart',[ShoppingContoller::class,'showCart']);
 
 Route::post('/add-information',[OrderController::class,'addAddress'])->middleware('auth:api');
 
