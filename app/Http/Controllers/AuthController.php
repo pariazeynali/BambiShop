@@ -53,10 +53,7 @@ class AuthController extends Controller
     }
     public function logout(Request $request)
     {
-        $token = null;
-        $user = $request->user();
-        $user->api_token = $token;
-        $user->save();
+        $user = User::where('username',$request->username)->update(["api_token",null]);
     }
 
 }
