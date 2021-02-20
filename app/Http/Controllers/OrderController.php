@@ -69,7 +69,7 @@ class OrderController extends Controller
 
             Order::create([
                 'product_id' => $cart->product_id,
-                'user_id' => $request->user()->id
+                'user_id' => $user->id
             ]);
         }
 
