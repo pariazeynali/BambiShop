@@ -14,7 +14,7 @@ class DropNationalidFromCustomerTable extends Migration
     public function up()
     {
         Schema::table('customers', function (Blueprint $table) {
-            $table->dropColumn('customer_id');
+            $table->dropColumn('national_id');
         });
     }
 
