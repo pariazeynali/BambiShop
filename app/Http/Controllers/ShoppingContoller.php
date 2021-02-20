@@ -12,14 +12,14 @@ class ShoppingContoller extends Controller
 {
     public function addToCart(Request $request)
     {
-        $user = User::where('username',$request->username);
+        $user = User::where('username',$request->username)->first();
         $validated = $request->validate([
             'product_id' => 'integer|exists:products,id',
         ]);
 
         Cart::create([
             'product_id' => $request->product_id,
-            'user_id' => $request->user()->id,
+            'user_id' => $user->id,
         ]);
         return response()->json(['flag'=>true,'message'=>'با موفقیت در سبد خرید اضافه شد']);
 
