@@ -57,7 +57,9 @@ class OrderController extends Controller
     }
 
     public function MoveCartToOrder(Request $request){
-        $carts = Cart::where('user_id',User::where('username',$request->username)->first()->id);
+        $user = User::where('username',$request->username)->first();
+
+        $carts = Cart::where('user_id',$user->id);
 
         foreach ($carts->get() as $cart){
 
