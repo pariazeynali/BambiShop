@@ -33,5 +33,6 @@ class ShoppingContoller extends Controller
        where('carts.user_id','=',$user->id)->get();
         return response()->json($cart);
 
+
     }
 }
